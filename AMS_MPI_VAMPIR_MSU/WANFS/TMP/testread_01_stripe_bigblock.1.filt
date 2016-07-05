@@ -1,0 +1,3 @@
+# list of regions, which are denied or whose call limit are reached
+# (region:limit)
+read:1000000

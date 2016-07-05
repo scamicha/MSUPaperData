@@ -1,0 +1,1123 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage{amssymb}
+\usepackage{longtable}
+\usepackage{pstricks,pst-plot,pstricks-add}
+\textwidth=16.0cm \textheight=27.0cm \topmargin=-1.8cm
+\oddsidemargin=0.1cm \evensidemargin=0.1cm \footskip=45pt
+
+\newcommand{\PstDrawNode}[7]{%
+   \definecolor{MyColor}{rgb}{#1,#2,#3}%
+   \fnode[framesize=#4 #5,fillstyle=solid,fillcolor=MyColor,linecolor=MyColor](#6,#7){Y}
+}
+
+\newcommand{\Print}[4]{%
+   \definecolor{MyColor}{rgb}{#1,#2,#3}%
+   \textcolor{MyColor}{#4}
+}
+
+\newenvironment{help}{}{}
+
+\begin{document}
+
+\begin{flushleft}
+
+file: \verb|amspec_mpi.otf| \\
+
+\bigskip
+\fbox{\parbox{6.0 cm}{created by : VampirTrace 5.8\\
+                      OTF-Version: 1.6.4 stingray}}
+\end{flushleft}
+\bigskip
+\bigskip
+
+\begin{center}
+
+{\Large \bf Top 33 of 33 Functions}
+
+\bigskip
+
+\begin{longtable}{|l||r|r|r|}
+
+   \hline
+   \bf Function & \bf invocations[\#] & \bf excl. time[sec] $\nabla$ &    \bf incl. time[sec] \\
+   \hline\hline
+      \verb|MPI_Recv            | & \Print{0.83}{1.00}{0.00}{81450} & \Print{1.00}{0.00}{0.00}{27172.688239} & \Print{0.73}{1.00}{0.00}{27173.146335} \\
+      \verb|MPI_Bcast           | & \Print{0.00}{0.17}{1.00}{4800} & \Print{0.00}{1.00}{0.85}{7788.906910} & \Print{0.00}{0.78}{1.00}{7788.906910} \\
+      \verb|!$omp do @amspec_mpi| & \Print{0.67}{1.00}{0.00}{76800} & \Print{0.00}{1.00}{0.97}{6974.667085} & \Print{0.00}{0.74}{1.00}{7342.285021} \\
+      \hline
+      \verb|read                | & \Print{0.00}{0.37}{1.00}{10756} & \Print{0.00}{0.13}{1.00}{872.357161} & \Print{0.00}{0.09}{1.00}{872.357161} \\
+      \verb|!$omp ibarrier @amsp| & \Print{0.67}{1.00}{0.00}{76800} & \Print{0.00}{0.05}{1.00}{367.617936} & \Print{0.00}{0.04}{1.00}{367.617936} \\
+      \verb|sync time           | & \Print{0.00}{0.00}{1.00}{64} & \Print{0.00}{0.01}{1.00}{100.248145} & \Print{0.00}{0.01}{1.00}{100.248145} \\
+      \hline
+      \verb|parallel region     | & \Print{1.00}{0.00}{0.00}{115200} & \Print{0.00}{0.01}{1.00}{78.585710} & \Print{0.00}{0.38}{1.00}{3759.693719} \\
+      \verb|MAIN__              | & \Print{0.00}{0.00}{1.00}{32} & \Print{0.00}{0.01}{1.00}{52.769647} & \Print{1.00}{0.00}{0.00}{39801.149472} \\
+      \verb|MPI_Init            | & \Print{0.00}{0.00}{1.00}{32} & \Print{0.00}{0.01}{1.00}{45.851059} & \Print{0.00}{0.01}{1.00}{143.857858} \\
+      \hline
+      \verb|!$omp do @amspec_mpi| & \Print{0.67}{1.00}{0.00}{76800} & \Print{0.00}{0.00}{1.00}{26.633214} & \Print{0.00}{0.00}{1.00}{30.809953} \\
+      \verb|open64              | & \Print{0.00}{0.01}{1.00}{151} & \Print{0.00}{0.00}{1.00}{5.525430} & \Print{0.00}{0.00}{1.00}{5.525430} \\
+      \verb|!$omp ibarrier @amsp| & \Print{0.67}{1.00}{0.00}{76800} & \Print{0.00}{0.00}{1.00}{4.176738} & \Print{0.00}{0.00}{1.00}{4.176738} \\
+      \hline
+      \verb|writev              | & \Print{0.74}{1.00}{0.00}{78976} & \Print{0.00}{0.00}{1.00}{1.294558} & \Print{0.00}{0.00}{1.00}{1.294558} \\
+      \verb|MPI_Send            | & \Print{0.83}{1.00}{0.00}{81450} & \Print{0.00}{0.00}{1.00}{0.775041} & \Print{0.00}{0.00}{1.00}{2.060610} \\
+      \verb|readv               | & \Print{0.59}{1.00}{0.00}{74710} & \Print{0.00}{0.00}{1.00}{0.459360} & \Print{0.00}{0.00}{1.00}{0.459360} \\
+      \hline
+      \verb|!$omp do @amspec_mpi| & \Print{0.67}{1.00}{0.00}{76800} & \Print{0.00}{0.00}{1.00}{0.337029} & \Print{0.00}{0.00}{1.00}{0.474205} \\
+      \verb|fopen               | & \Print{0.00}{0.09}{1.00}{2592} & \Print{0.00}{0.00}{1.00}{0.336372} & \Print{0.00}{0.00}{1.00}{0.336372} \\
+      \verb|!$omp parallel @amsp| & \Print{0.67}{1.00}{0.00}{76800} & \Print{0.00}{0.00}{1.00}{0.327018} & \Print{0.00}{0.74}{1.00}{7342.612039} \\
+      \hline
+      \verb|!$omp parallel @amsp| & \Print{0.67}{1.00}{0.00}{76800} & \Print{0.00}{0.00}{1.00}{0.192260} & \Print{0.00}{0.00}{1.00}{31.002213} \\
+      \verb|!$omp ibarrier @amsp| & \Print{0.67}{1.00}{0.00}{76800} & \Print{0.00}{0.00}{1.00}{0.137176} & \Print{0.00}{0.00}{1.00}{0.137176} \\
+      \verb|MPI_Finalize        | & \Print{0.00}{0.00}{1.00}{32} & \Print{0.00}{0.00}{1.00}{0.118093} & \Print{0.00}{0.00}{1.00}{2.791363} \\
+      \hline
+      \verb|!$omp parallel @amsp| & \Print{0.67}{1.00}{0.00}{76800} & \Print{0.00}{0.00}{1.00}{0.063645} & \Print{0.00}{0.00}{1.00}{0.537850} \\
+      \verb|fgets               | & \Print{0.00}{1.00}{0.11}{54464} & \Print{0.00}{0.00}{1.00}{0.050703} & \Print{0.00}{0.00}{1.00}{0.050703} \\
+      \verb|close               | & \Print{0.00}{0.03}{1.00}{809} & \Print{0.00}{0.00}{1.00}{0.041687} & \Print{0.00}{0.00}{1.00}{0.041687} \\
+      \hline
+      \verb|fclose              | & \Print{0.00}{0.05}{1.00}{1312} & \Print{0.00}{0.00}{1.00}{0.024208} & \Print{0.00}{0.00}{1.00}{0.024208} \\
+      \verb|open                | & \Print{0.00}{0.02}{1.00}{448} & \Print{0.00}{0.00}{1.00}{0.003435} & \Print{0.00}{0.00}{1.00}{0.003435} \\
+      \verb|write               | & \Print{0.00}{0.00}{1.00}{4} & \Print{0.00}{0.00}{1.00}{0.002547} & \Print{0.00}{0.00}{1.00}{0.002547} \\
+      \hline
+      \verb|unlink              | & \Print{0.00}{0.00}{1.00}{64} & \Print{0.00}{0.00}{1.00}{0.001582} & \Print{0.00}{0.00}{1.00}{0.001582} \\
+      \verb|fread               | & \Print{0.00}{0.00}{1.00}{64} & \Print{0.00}{0.00}{1.00}{0.000730} & \Print{0.00}{0.00}{1.00}{0.000730} \\
+      \verb|lseek64             | & \Print{0.00}{0.01}{1.00}{151} & \Print{0.00}{0.00}{1.00}{0.000598} & \Print{0.00}{0.00}{1.00}{0.000598} \\
+      \hline
+      \verb|rewind              | & \Print{0.00}{0.00}{1.00}{64} & \Print{0.00}{0.00}{1.00}{0.000188} & \Print{0.00}{0.00}{1.00}{0.000188} \\
+      \verb|MPI_Comm_rank       | & \Print{0.00}{0.00}{1.00}{32} & \Print{0.00}{0.00}{1.00}{0.000051} & \Print{0.00}{0.00}{1.00}{0.000051} \\
+      \verb|MPI_Comm_size       | & \Print{0.00}{0.00}{1.00}{32} & \Print{0.00}{0.00}{1.00}{0.000010} & \Print{0.00}{0.00}{1.00}{0.000010} \\
+      \hline
+   \hline
+\end{longtable}
+
+\newpage
+
+\newpage
+\def\bardataII
+{
+0.30 14.51
+0.80 14.38
+1.30 11.27
+1.80 11.44
+2.30 11.23
+2.80 11.40
+3.30 11.23
+3.80 11.40
+4.30 11.36
+4.80 11.51
+5.30 11.23
+5.80 11.40
+6.30 11.23
+6.80 11.40
+7.30 11.37
+7.80 11.52
+}
+{\Large \bf Number of P2P Invocations (sum)}
+
+\bigskip
+\bigskip
+\bigskip
+
+\begin{help}
+\psset{xunit=1,yunit=0.5}
+\begin{pspicture}(0,0)(16,17.87)
+   \psaxes[labels=no,Oy=-1,ysubticks=2,ylogBase=2,Dy=2,ytickwidth=1pt,
+            ysubtickwidth=1pt,xticksize=-1 17.87,yticksize=0 16,ysubticksize=1,
+            yticklinestyle=dotted,ysubticklinestyle=dotted]{-}(0,0)(0,0)(16.1,17.87)
+   \rput[r](-0.2,0){0}
+\psline{-}(-0.15,1)(0,1)
+   \rput[r](-0.2,1){1}
+\psline{-}(-0.15,2)(0,2)
+   \rput[r](-0.2,2){2}
+\psline{-}(-0.15,3)(0,3)
+   \rput[r](-0.2,3){4}
+\psline{-}(-0.15,4)(0,4)
+   \rput[r](-0.2,4){8}
+\psline{-}(-0.15,5)(0,5)
+   \rput[r](-0.2,5){16}
+\psline{-}(-0.15,6)(0,6)
+   \rput[r](-0.2,6){32}
+\psline{-}(-0.15,7)(0,7)
+   \rput[r](-0.2,7){64}
+\psline{-}(-0.15,8)(0,8)
+   \rput[r](-0.2,8){128}
+\psline{-}(-0.15,9)(0,9)
+   \rput[r](-0.2,9){256}
+\psline{-}(-0.15,10)(0,10)
+   \rput[r](-0.2,10){512}
+\psline{-}(-0.15,11)(0,11)
+   \rput[r](-0.2,11){1.02K}
+\psline{-}(-0.15,12)(0,12)
+   \rput[r](-0.2,12){2.05K}
+\psline{-}(-0.15,13)(0,13)
+   \rput[r](-0.2,13){4.10K}
+\psline{-}(-0.15,14)(0,14)
+   \rput[r](-0.2,14){8.19K}
+\psline{-}(-0.15,15)(0,15)
+   \rput[r](-0.2,15){16.38K}
+\psline{-}(-0.15,16)(0,16)
+   \rput[r](-0.2,16){32.77K}
+\psline{-}(-0.15,17)(0,17)
+   \rput[r](-0.2,17){65.54K}
+   \listplot[shadow=false,plotstyle=bar,barwidth=0.46,
+       fillcolor=green,fillstyle=solid]{\bardataII}
+\psframe[fillstyle=solid,fillcolor=lightgray](0.20,0)(0.40,15.99)
+\psframe[fillstyle=solid,fillcolor=lightgray](0.70,0)(0.90,15.83)
+\psframe[fillstyle=solid,fillcolor=lightgray](1.20,11.10)(1.40,11.43)
+\psframe[fillstyle=solid,fillcolor=lightgray](1.70,11.28)(1.90,11.58)
+\psframe[fillstyle=solid,fillcolor=lightgray](2.20,11.23)(2.40,11.24)
+\psframe[fillstyle=solid,fillcolor=lightgray](2.70,11.40)(2.90,11.41)
+\psframe[fillstyle=solid,fillcolor=lightgray](3.20,11.23)(3.40,11.23)
+\psframe[fillstyle=solid,fillcolor=lightgray](3.70,11.40)(3.90,11.40)
+\psframe[fillstyle=solid,fillcolor=lightgray](4.20,11.19)(4.40,11.51)
+\psframe[fillstyle=solid,fillcolor=lightgray](4.70,11.37)(4.90,11.65)
+\psframe[fillstyle=solid,fillcolor=lightgray](5.20,11.22)(5.40,11.24)
+\psframe[fillstyle=solid,fillcolor=lightgray](5.70,11.39)(5.90,11.41)
+\psframe[fillstyle=solid,fillcolor=lightgray](6.20,11.23)(6.40,11.23)
+\psframe[fillstyle=solid,fillcolor=lightgray](6.70,11.40)(6.90,11.40)
+\psframe[fillstyle=solid,fillcolor=lightgray](7.20,11.20)(7.40,11.52)
+\psframe[fillstyle=solid,fillcolor=lightgray](7.70,11.37)(7.90,11.66)
+  \rput[t](0.20,-0.2){s}
+  \rput[t](0.80,-0.2){r}
+  \rput[t](1.20,-0.2){s}
+  \rput[t](1.80,-0.2){r}
+  \rput[r]{90}(0.20,-0.8){Process 0}
+  \rput[r]{90}(0.50,-0.8){-}
+  \rput[r]{90}(0.80,-0.8){Process 3}
+  \rput[t](2.20,-0.2){s}
+  \rput[t](2.80,-0.2){r}
+  \rput[t](3.20,-0.2){s}
+  \rput[t](3.80,-0.2){r}
+  \rput[r]{90}(2.20,-0.8){Process 8}
+  \rput[r]{90}(2.50,-0.8){-}
+  \rput[r]{90}(2.80,-0.8){Process 11}
+  \rput[t](4.20,-0.2){s}
+  \rput[t](4.80,-0.2){r}
+  \rput[t](5.20,-0.2){s}
+  \rput[t](5.80,-0.2){r}
+  \rput[r]{90}(4.20,-0.8){Process 16}
+  \rput[r]{90}(4.50,-0.8){-}
+  \rput[r]{90}(4.80,-0.8){Process 19}
+  \rput[t](6.20,-0.2){s}
+  \rput[t](6.80,-0.2){r}
+  \rput[t](7.20,-0.2){s}
+  \rput[t](7.80,-0.2){r}
+  \rput[r]{90}(6.20,-0.8){Process 24}
+  \rput[r]{90}(6.50,-0.8){-}
+  \rput[r]{90}(6.80,-0.8){Process 27}
+  \rput[t](8.20,-0.2){s}
+  \rput[t](8.80,-0.2){r}
+  \rput[t](9.20,-0.2){s}
+  \rput[t](9.80,-0.2){r}
+  \rput[r]{90}(8.20,-0.8){Thread 1:1}
+  \rput[r]{90}(8.50,-0.8){-}
+  \rput[r]{90}(8.80,-0.8){Thread 4:1}
+  \rput[t](10.20,-0.2){s}
+  \rput[t](10.80,-0.2){r}
+  \rput[t](11.20,-0.2){s}
+  \rput[t](11.80,-0.2){r}
+  \rput[r]{90}(10.20,-0.8){Thread 9:1}
+  \rput[r]{90}(10.50,-0.8){-}
+  \rput[r]{90}(10.80,-0.8){Thread 12:1}
+  \rput[t](12.20,-0.2){s}
+  \rput[t](12.80,-0.2){r}
+  \rput[t](13.20,-0.2){s}
+  \rput[t](13.80,-0.2){r}
+  \rput[r]{90}(12.20,-0.8){Thread 17:1}
+  \rput[r]{90}(12.50,-0.8){-}
+  \rput[r]{90}(12.80,-0.8){Thread 20:1}
+  \rput[t](14.20,-0.2){s}
+  \rput[t](14.80,-0.2){r}
+  \rput[t](15.20,-0.2){s}
+  \rput[t](15.80,-0.2){r}
+  \rput[r]{90}(14.20,-0.8){Thread 25:1}
+  \rput[r]{90}(14.50,-0.8){-}
+  \rput[r]{90}(14.80,-0.8){Thread 28:1}
+  \rput[l](0,-7){s - Send}
+  \rput[l](0,-7.7){r - Receive}
+\end{pspicture}
+\end{help}
+\newpage
+\def\bardataII
+{
+0.30 16.70
+0.80 18.26
+1.30 15.27
+1.80 13.27
+2.30 15.23
+2.80 13.23
+3.30 15.23
+3.80 13.23
+4.30 15.36
+4.80 13.36
+5.30 15.23
+5.80 13.23
+6.30 15.23
+6.80 13.23
+7.30 15.37
+7.80 13.37
+}
+{\Large \bf P2P Message Length (sum)[in Byte]}
+
+\bigskip
+\bigskip
+\bigskip
+
+\begin{help}
+\psset{xunit=1,yunit=0.5}
+\begin{pspicture}(0,0)(16,20.76)
+   \psaxes[labels=no,Oy=-1,ysubticks=2,ylogBase=2,Dy=2,ytickwidth=1pt,
+            ysubtickwidth=1pt,xticksize=-1 20.76,yticksize=0 16,ysubticksize=1,
+            yticklinestyle=dotted,ysubticklinestyle=dotted]{-}(0,0)(0,0)(16.1,20.76)
+   \rput[r](-0.2,0){0}
+\psline{-}(-0.15,1)(0,1)
+   \rput[r](-0.2,1){1}
+\psline{-}(-0.15,2)(0,2)
+   \rput[r](-0.2,2){2}
+\psline{-}(-0.15,3)(0,3)
+   \rput[r](-0.2,3){4}
+\psline{-}(-0.15,4)(0,4)
+   \rput[r](-0.2,4){8}
+\psline{-}(-0.15,5)(0,5)
+   \rput[r](-0.2,5){16}
+\psline{-}(-0.15,6)(0,6)
+   \rput[r](-0.2,6){32}
+\psline{-}(-0.15,7)(0,7)
+   \rput[r](-0.2,7){64}
+\psline{-}(-0.15,8)(0,8)
+   \rput[r](-0.2,8){128}
+\psline{-}(-0.15,9)(0,9)
+   \rput[r](-0.2,9){256}
+\psline{-}(-0.15,10)(0,10)
+   \rput[r](-0.2,10){512}
+\psline{-}(-0.15,11)(0,11)
+   \rput[r](-0.2,11){1.00K}
+\psline{-}(-0.15,12)(0,12)
+   \rput[r](-0.2,12){2.00K}
+\psline{-}(-0.15,13)(0,13)
+   \rput[r](-0.2,13){4.00K}
+\psline{-}(-0.15,14)(0,14)
+   \rput[r](-0.2,14){8.00K}
+\psline{-}(-0.15,15)(0,15)
+   \rput[r](-0.2,15){16.00K}
+\psline{-}(-0.15,16)(0,16)
+   \rput[r](-0.2,16){32.00K}
+\psline{-}(-0.15,17)(0,17)
+   \rput[r](-0.2,17){64.00K}
+\psline{-}(-0.15,18)(0,18)
+   \rput[r](-0.2,18){128.00K}
+\psline{-}(-0.15,19)(0,19)
+   \rput[r](-0.2,19){256.00K}
+\psline{-}(-0.15,20)(0,20)
+   \rput[r](-0.2,20){512.00K}
+\psline{-}(-0.15,21)(0,21)
+   \rput[r](-0.2,21){1.00M}
+   \listplot[shadow=false,plotstyle=bar,barwidth=0.46,
+       fillcolor=green,fillstyle=solid]{\bardataII}
+\psframe[fillstyle=solid,fillcolor=lightgray](0.20,0)(0.40,17.87)
+\psframe[fillstyle=solid,fillcolor=lightgray](0.70,0)(0.90,19.82)
+\psframe[fillstyle=solid,fillcolor=lightgray](1.20,15.10)(1.40,15.43)
+\psframe[fillstyle=solid,fillcolor=lightgray](1.70,13.10)(1.90,13.43)
+\psframe[fillstyle=solid,fillcolor=lightgray](2.20,15.23)(2.40,15.24)
+\psframe[fillstyle=solid,fillcolor=lightgray](2.70,13.23)(2.90,13.24)
+\psframe[fillstyle=solid,fillcolor=lightgray](3.20,15.23)(3.40,15.23)
+\psframe[fillstyle=solid,fillcolor=lightgray](3.70,13.23)(3.90,13.23)
+\psframe[fillstyle=solid,fillcolor=lightgray](4.20,15.19)(4.40,15.51)
+\psframe[fillstyle=solid,fillcolor=lightgray](4.70,13.19)(4.90,13.51)
+\psframe[fillstyle=solid,fillcolor=lightgray](5.20,15.22)(5.40,15.24)
+\psframe[fillstyle=solid,fillcolor=lightgray](5.70,13.22)(5.90,13.24)
+\psframe[fillstyle=solid,fillcolor=lightgray](6.20,15.23)(6.40,15.23)
+\psframe[fillstyle=solid,fillcolor=lightgray](6.70,13.23)(6.90,13.23)
+\psframe[fillstyle=solid,fillcolor=lightgray](7.20,15.20)(7.40,15.52)
+\psframe[fillstyle=solid,fillcolor=lightgray](7.70,13.20)(7.90,13.52)
+  \rput[t](0.20,-0.2){s}
+  \rput[t](0.80,-0.2){r}
+  \rput[t](1.20,-0.2){s}
+  \rput[t](1.80,-0.2){r}
+  \rput[r]{90}(0.20,-0.8){Process 0}
+  \rput[r]{90}(0.50,-0.8){-}
+  \rput[r]{90}(0.80,-0.8){Process 3}
+  \rput[t](2.20,-0.2){s}
+  \rput[t](2.80,-0.2){r}
+  \rput[t](3.20,-0.2){s}
+  \rput[t](3.80,-0.2){r}
+  \rput[r]{90}(2.20,-0.8){Process 8}
+  \rput[r]{90}(2.50,-0.8){-}
+  \rput[r]{90}(2.80,-0.8){Process 11}
+  \rput[t](4.20,-0.2){s}
+  \rput[t](4.80,-0.2){r}
+  \rput[t](5.20,-0.2){s}
+  \rput[t](5.80,-0.2){r}
+  \rput[r]{90}(4.20,-0.8){Process 16}
+  \rput[r]{90}(4.50,-0.8){-}
+  \rput[r]{90}(4.80,-0.8){Process 19}
+  \rput[t](6.20,-0.2){s}
+  \rput[t](6.80,-0.2){r}
+  \rput[t](7.20,-0.2){s}
+  \rput[t](7.80,-0.2){r}
+  \rput[r]{90}(6.20,-0.8){Process 24}
+  \rput[r]{90}(6.50,-0.8){-}
+  \rput[r]{90}(6.80,-0.8){Process 27}
+  \rput[t](8.20,-0.2){s}
+  \rput[t](8.80,-0.2){r}
+  \rput[t](9.20,-0.2){s}
+  \rput[t](9.80,-0.2){r}
+  \rput[r]{90}(8.20,-0.8){Thread 1:1}
+  \rput[r]{90}(8.50,-0.8){-}
+  \rput[r]{90}(8.80,-0.8){Thread 4:1}
+  \rput[t](10.20,-0.2){s}
+  \rput[t](10.80,-0.2){r}
+  \rput[t](11.20,-0.2){s}
+  \rput[t](11.80,-0.2){r}
+  \rput[r]{90}(10.20,-0.8){Thread 9:1}
+  \rput[r]{90}(10.50,-0.8){-}
+  \rput[r]{90}(10.80,-0.8){Thread 12:1}
+  \rput[t](12.20,-0.2){s}
+  \rput[t](12.80,-0.2){r}
+  \rput[t](13.20,-0.2){s}
+  \rput[t](13.80,-0.2){r}
+  \rput[r]{90}(12.20,-0.8){Thread 17:1}
+  \rput[r]{90}(12.50,-0.8){-}
+  \rput[r]{90}(12.80,-0.8){Thread 20:1}
+  \rput[t](14.20,-0.2){s}
+  \rput[t](14.80,-0.2){r}
+  \rput[t](15.20,-0.2){s}
+  \rput[t](15.80,-0.2){r}
+  \rput[r]{90}(14.20,-0.8){Thread 25:1}
+  \rput[r]{90}(14.50,-0.8){-}
+  \rput[r]{90}(14.80,-0.8){Thread 28:1}
+  \rput[l](0,-7){s - Send}
+  \rput[l](0,-7.7){r - Receive}
+\end{pspicture}
+\end{help}
+\newpage
+{\Large \bf P2P - Message Rate (average)}
+\bigskip
+\bigskip
+\bigskip
+\bigskip
+\bigskip
+
+\begin{help}
+\psset{xunit=0.75,yunit=0.75}
+\begin{pspicture}(0,-3)(16,13)
+   \psgrid[subgriddiv=0,%
+      griddots=5,%
+      gridlabels=0](0,-3)(16,13)
+    \PstDrawNode{0.00}{0.00}{0.00}{0.73}{0.73}{0.50}{12.50}
+    \PstDrawNode{1.00}{0.00}{0.00}{0.5}{0.5}{0.50}{12.50}
+    \PstDrawNode{0.56}{0.56}{0.56}{0.73}{0.73}{1.50}{12.50}
+    \PstDrawNode{1.00}{0.19}{0.00}{0.5}{0.5}{1.50}{12.50}
+    \PstDrawNode{0.73}{0.73}{0.73}{0.73}{0.73}{2.50}{12.50}
+    \PstDrawNode{0.39}{1.00}{0.00}{0.5}{0.5}{2.50}{12.50}
+    \PstDrawNode{0.80}{0.80}{0.80}{0.73}{0.73}{3.50}{12.50}
+    \PstDrawNode{0.00}{1.00}{0.23}{0.5}{0.5}{3.50}{12.50}
+    \PstDrawNode{0.82}{0.82}{0.82}{0.73}{0.73}{4.50}{12.50}
+    \PstDrawNode{0.00}{1.00}{0.44}{0.5}{0.5}{4.50}{12.50}
+    \PstDrawNode{0.87}{0.87}{0.87}{0.73}{0.73}{5.50}{12.50}
+    \PstDrawNode{0.00}{1.00}{0.81}{0.5}{0.5}{5.50}{12.50}
+    \PstDrawNode{0.89}{0.89}{0.89}{0.73}{0.73}{6.50}{12.50}
+    \PstDrawNode{0.00}{1.00}{0.98}{0.5}{0.5}{6.50}{12.50}
+    \PstDrawNode{0.89}{0.89}{0.89}{0.73}{0.73}{7.50}{12.50}
+    \PstDrawNode{0.00}{0.99}{1.00}{0.5}{0.5}{7.50}{12.50}
+    \PstDrawNode{1.00}{1.00}{1.00}{0.73}{0.73}{0.50}{11.50}
+    \PstDrawNode{0.00}{0.00}{1.00}{0.5}{0.5}{0.50}{11.50}
+    \PstDrawNode{1.00}{1.00}{1.00}{0.73}{0.73}{0.50}{10.50}
+    \PstDrawNode{0.00}{0.00}{1.00}{0.5}{0.5}{0.50}{10.50}
+    \PstDrawNode{1.00}{1.00}{1.00}{0.73}{0.73}{0.50}{9.50}
+    \PstDrawNode{0.00}{0.00}{1.00}{0.5}{0.5}{0.50}{9.50}
+    \PstDrawNode{1.00}{1.00}{1.00}{0.73}{0.73}{0.50}{8.50}
+    \PstDrawNode{0.00}{0.00}{1.00}{0.5}{0.5}{0.50}{8.50}
+    \PstDrawNode{1.00}{1.00}{1.00}{0.73}{0.73}{0.50}{7.50}
+    \PstDrawNode{0.00}{0.00}{1.00}{0.5}{0.5}{0.50}{7.50}
+    \PstDrawNode{1.00}{1.00}{1.00}{0.73}{0.73}{0.50}{6.50}
+    \PstDrawNode{0.00}{0.00}{1.00}{0.5}{0.5}{0.50}{6.50}
+    \PstDrawNode{1.00}{1.00}{1.00}{0.73}{0.73}{0.50}{5.50}
+    \PstDrawNode{0.00}{0.00}{1.00}{0.5}{0.5}{0.50}{5.50}
+  \rput[r](-0.2,12.80){Process 0}
+  \rput[r](-0.2,12.50){-}
+  \rput[r](-0.2,12.20){Process 3}
+  \rput[l]{90}(0.20,13.2){Process 0}
+  \rput[l]{90}(0.50,13.2){-}
+  \rput[l]{90}(0.80,13.2){Process 3}
+  \rput[r](-0.2,10.80){Process 8}
+  \rput[r](-0.2,10.50){-}
+  \rput[r](-0.2,10.20){Process 11}
+  \rput[l]{90}(2.20,13.2){Process 8}
+  \rput[l]{90}(2.50,13.2){-}
+  \rput[l]{90}(2.80,13.2){Process 11}
+  \rput[r](-0.2,8.80){Process 16}
+  \rput[r](-0.2,8.50){-}
+  \rput[r](-0.2,8.20){Process 19}
+  \rput[l]{90}(4.20,13.2){Process 16}
+  \rput[l]{90}(4.50,13.2){-}
+  \rput[l]{90}(4.80,13.2){Process 19}
+  \rput[r](-0.2,6.80){Process 24}
+  \rput[r](-0.2,6.50){-}
+  \rput[r](-0.2,6.20){Process 27}
+  \rput[l]{90}(6.20,13.2){Process 24}
+  \rput[l]{90}(6.50,13.2){-}
+  \rput[l]{90}(6.80,13.2){Process 27}
+  \rput[r](-0.2,4.80){Thread 1:1}
+  \rput[r](-0.2,4.50){-}
+  \rput[r](-0.2,4.20){Thread 4:1}
+  \rput[l]{90}(8.20,13.2){Thread 1:1}
+  \rput[l]{90}(8.50,13.2){-}
+  \rput[l]{90}(8.80,13.2){Thread 4:1}
+  \rput[r](-0.2,2.80){Thread 9:1}
+  \rput[r](-0.2,2.50){-}
+  \rput[r](-0.2,2.20){Thread 12:1}
+  \rput[l]{90}(10.20,13.2){Thread 9:1}
+  \rput[l]{90}(10.50,13.2){-}
+  \rput[l]{90}(10.80,13.2){Thread 12:1}
+  \rput[r](-0.2,0.80){Thread 17:1}
+  \rput[r](-0.2,0.50){-}
+  \rput[r](-0.2,0.20){Thread 20:1}
+  \rput[l]{90}(12.20,13.2){Thread 17:1}
+  \rput[l]{90}(12.50,13.2){-}
+  \rput[l]{90}(12.80,13.2){Thread 20:1}
+  \rput[r](-0.2,-1.20){Thread 25:1}
+  \rput[r](-0.2,-1.50){-}
+  \rput[r](-0.2,-1.80){Thread 28:1}
+  \rput[l]{90}(14.20,13.2){Thread 25:1}
+  \rput[l]{90}(14.50,13.2){-}
+  \rput[l]{90}(14.80,13.2){Thread 28:1}
+
+  \PstDrawNode{0.000}{0.000}{1.000}{0.5}{0.5}{0.000}{-5}
+  \rput[r]{90}(0.000,-5.500){5.500 Byte/s}
+  \PstDrawNode{0.000}{0.154}{1.000}{0.5}{0.5}{0.750}{-5}
+  \rput[r]{90}(0.750,-5.500){58.237 Byte/s}
+  \PstDrawNode{0.000}{0.308}{1.000}{0.5}{0.5}{1.500}{-5}
+  \rput[r]{90}(1.500,-5.500){110.973 Byte/s}
+  \PstDrawNode{0.000}{0.462}{1.000}{0.5}{0.5}{2.250}{-5}
+  \rput[r]{90}(2.250,-5.500){163.709 Byte/s}
+  \PstDrawNode{0.000}{0.615}{1.000}{0.5}{0.5}{3.000}{-5}
+  \rput[r]{90}(3.000,-5.500){216.446 Byte/s}
+  \PstDrawNode{0.000}{0.769}{1.000}{0.5}{0.5}{3.750}{-5}
+  \rput[r]{90}(3.750,-5.500){269.182 Byte/s}
+  \PstDrawNode{0.000}{0.923}{1.000}{0.5}{0.5}{4.500}{-5}
+  \rput[r]{90}(4.500,-5.500){321.918 Byte/s}
+  \PstDrawNode{0.000}{1.000}{0.923}{0.5}{0.5}{5.250}{-5}
+  \rput[r]{90}(5.250,-5.500){374.655 Byte/s}
+  \PstDrawNode{0.000}{1.000}{0.769}{0.5}{0.5}{6.000}{-5}
+  \rput[r]{90}(6.000,-5.500){427.391 Byte/s}
+  \PstDrawNode{0.000}{1.000}{0.615}{0.5}{0.5}{6.750}{-5}
+  \rput[r]{90}(6.750,-5.500){480.127 Byte/s}
+  \PstDrawNode{0.000}{1.000}{0.462}{0.5}{0.5}{7.500}{-5}
+  \rput[r]{90}(7.500,-5.500){532.864 Byte/s}
+  \PstDrawNode{0.000}{1.000}{0.308}{0.5}{0.5}{8.250}{-5}
+  \rput[r]{90}(8.250,-5.500){585.600 Byte/s}
+  \PstDrawNode{0.000}{1.000}{0.154}{0.5}{0.5}{9.000}{-5}
+  \rput[r]{90}(9.000,-5.500){638.336 Byte/s}
+  \PstDrawNode{0.000}{1.000}{0.000}{0.5}{0.5}{9.750}{-5}
+  \rput[r]{90}(9.750,-5.500){691.073 Byte/s}
+  \PstDrawNode{0.154}{1.000}{0.000}{0.5}{0.5}{10.500}{-5}
+  \rput[r]{90}(10.500,-5.500){743.809 Byte/s}
+  \PstDrawNode{0.308}{1.000}{0.000}{0.5}{0.5}{11.250}{-5}
+  \rput[r]{90}(11.250,-5.500){796.546 Byte/s}
+  \PstDrawNode{0.462}{1.000}{0.000}{0.5}{0.5}{12.000}{-5}
+  \rput[r]{90}(12.000,-5.500){849.282 Byte/s}
+  \PstDrawNode{0.615}{1.000}{0.000}{0.5}{0.5}{12.750}{-5}
+  \rput[r]{90}(12.750,-5.500){902.018 Byte/s}
+  \PstDrawNode{0.769}{1.000}{0.000}{0.5}{0.5}{13.500}{-5}
+  \rput[r]{90}(13.500,-5.500){954.755 Byte/s}
+  \PstDrawNode{0.923}{1.000}{0.000}{0.5}{0.5}{14.250}{-5}
+  \rput[r]{90}(14.250,-5.500){1007.491 Byte/s}
+  \PstDrawNode{1.000}{0.923}{0.000}{0.5}{0.5}{15.000}{-5}
+  \rput[r]{90}(15.000,-5.500){1060.227 Byte/s}
+  \PstDrawNode{1.000}{0.769}{0.000}{0.5}{0.5}{15.750}{-5}
+  \rput[r]{90}(15.750,-5.500){1112.964 Byte/s}
+  \PstDrawNode{1.000}{0.615}{0.000}{0.5}{0.5}{16.500}{-5}
+  \rput[r]{90}(16.500,-5.500){1165.700 Byte/s}
+  \PstDrawNode{1.000}{0.462}{0.000}{0.5}{0.5}{17.250}{-5}
+  \rput[r]{90}(17.250,-5.500){1218.436 Byte/s}
+  \PstDrawNode{1.000}{0.308}{0.000}{0.5}{0.5}{18.000}{-5}
+  \rput[r]{90}(18.000,-5.500){1271.173 Byte/s}
+  \PstDrawNode{1.000}{0.154}{0.000}{0.5}{0.5}{18.750}{-5}
+  \rput[r]{90}(18.750,-5.500){1323.909 Byte/s}
+  \PstDrawNode{1.000}{1.000}{1.000}{0.5}{0.5}{0.000}{-12}
+  \rput[r]{90}(0.000,-12.500){9.839 Byte/s}
+  \PstDrawNode{0.962}{0.962}{0.962}{0.5}{0.5}{0.750}{-12}
+  \rput[r]{90}(0.750,-12.500){220.543 Byte/s}
+  \PstDrawNode{0.923}{0.923}{0.923}{0.5}{0.5}{1.500}{-12}
+  \rput[r]{90}(1.500,-12.500){431.247 Byte/s}
+  \PstDrawNode{0.885}{0.885}{0.885}{0.5}{0.5}{2.250}{-12}
+  \rput[r]{90}(2.250,-12.500){641.951 Byte/s}
+  \PstDrawNode{0.846}{0.846}{0.846}{0.5}{0.5}{3.000}{-12}
+  \rput[r]{90}(3.000,-12.500){852.655 Byte/s}
+  \PstDrawNode{0.808}{0.808}{0.808}{0.5}{0.5}{3.750}{-12}
+  \rput[r]{90}(3.750,-12.500){1063.359 Byte/s}
+  \PstDrawNode{0.769}{0.769}{0.769}{0.5}{0.5}{4.500}{-12}
+  \rput[r]{90}(4.500,-12.500){1274.063 Byte/s}
+  \PstDrawNode{0.731}{0.731}{0.731}{0.5}{0.5}{5.250}{-12}
+  \rput[r]{90}(5.250,-12.500){1484.767 Byte/s}
+  \PstDrawNode{0.692}{0.692}{0.692}{0.5}{0.5}{6.000}{-12}
+  \rput[r]{90}(6.000,-12.500){1695.471 Byte/s}
+  \PstDrawNode{0.654}{0.654}{0.654}{0.5}{0.5}{6.750}{-12}
+  \rput[r]{90}(6.750,-12.500){1906.175 Byte/s}
+  \PstDrawNode{0.615}{0.615}{0.615}{0.5}{0.5}{7.500}{-12}
+  \rput[r]{90}(7.500,-12.500){2116.879 Byte/s}
+  \PstDrawNode{0.577}{0.577}{0.577}{0.5}{0.5}{8.250}{-12}
+  \rput[r]{90}(8.250,-12.500){2327.583 Byte/s}
+  \PstDrawNode{0.538}{0.538}{0.538}{0.5}{0.5}{9.000}{-12}
+  \rput[r]{90}(9.000,-12.500){2538.287 Byte/s}
+  \PstDrawNode{0.500}{0.500}{0.500}{0.5}{0.5}{9.750}{-12}
+  \rput[r]{90}(9.750,-12.500){2748.991 Byte/s}
+  \PstDrawNode{0.462}{0.462}{0.462}{0.5}{0.5}{10.500}{-12}
+  \rput[r]{90}(10.500,-12.500){2959.695 Byte/s}
+  \PstDrawNode{0.423}{0.423}{0.423}{0.5}{0.5}{11.250}{-12}
+  \rput[r]{90}(11.250,-12.500){3170.399 Byte/s}
+  \PstDrawNode{0.385}{0.385}{0.385}{0.5}{0.5}{12.000}{-12}
+  \rput[r]{90}(12.000,-12.500){3381.103 Byte/s}
+  \PstDrawNode{0.346}{0.346}{0.346}{0.5}{0.5}{12.750}{-12}
+  \rput[r]{90}(12.750,-12.500){3591.807 Byte/s}
+  \PstDrawNode{0.308}{0.308}{0.308}{0.5}{0.5}{13.500}{-12}
+  \rput[r]{90}(13.500,-12.500){3802.511 Byte/s}
+  \PstDrawNode{0.269}{0.269}{0.269}{0.5}{0.5}{14.250}{-12}
+  \rput[r]{90}(14.250,-12.500){4013.215 Byte/s}
+  \PstDrawNode{0.231}{0.231}{0.231}{0.5}{0.5}{15.000}{-12}
+  \rput[r]{90}(15.000,-12.500){4223.919 Byte/s}
+  \PstDrawNode{0.192}{0.192}{0.192}{0.5}{0.5}{15.750}{-12}
+  \rput[r]{90}(15.750,-12.500){4434.623 Byte/s}
+  \PstDrawNode{0.154}{0.154}{0.154}{0.5}{0.5}{16.500}{-12}
+  \rput[r]{90}(16.500,-12.500){4645.327 Byte/s}
+  \PstDrawNode{0.115}{0.115}{0.115}{0.5}{0.5}{17.250}{-12}
+  \rput[r]{90}(17.250,-12.500){4856.031 Byte/s}
+  \PstDrawNode{0.077}{0.077}{0.077}{0.5}{0.5}{18.000}{-12}
+  \rput[r]{90}(18.000,-12.500){5066.735 Byte/s}
+  \PstDrawNode{0.038}{0.038}{0.038}{0.5}{0.5}{18.750}{-12}
+  \rput[r]{90}(18.750,-12.500){5277.439 Byte/s}
+\end{pspicture}
+\end{help}
+
+\newpage
+
+{\Large \bf P2P - message rate histogram}
+\bigskip
+
+\begin{help}
+\psset{xunit=0.5,yunit=0.25}
+\begin{pspicture}(25,33)
+   \psgrid[subgriddiv=0,%
+      griddots=5,%
+      gridlabels=0,%
+      yunit=2](24,16)
+    \PstDrawNode{0.54}{0.54}{0.54}{0.48}{0.48}{0.50}{1}
+    \PstDrawNode{0.82}{0.82}{0.82}{0.48}{0.48}{2.50}{1}
+    \PstDrawNode{0.74}{0.74}{0.74}{0.48}{0.48}{2.50}{7}
+    \PstDrawNode{0.74}{0.74}{0.74}{0.48}{0.48}{2.50}{9}
+    \PstDrawNode{0.87}{0.87}{0.87}{0.48}{0.48}{2.50}{11}
+    \PstDrawNode{0.90}{0.90}{0.90}{0.48}{0.48}{2.50}{13}
+    \PstDrawNode{1.00}{0.24}{0.00}{0.48}{0.48}{2.50}{15}
+    \PstDrawNode{0.77}{0.77}{0.77}{0.48}{0.48}{2.50}{17}
+    \PstDrawNode{0.89}{0.89}{0.89}{0.48}{0.48}{2.50}{19}
+    \PstDrawNode{0.90}{0.90}{0.90}{0.48}{0.48}{2.50}{21}
+    \PstDrawNode{0.90}{0.90}{0.90}{0.48}{0.48}{2.50}{23}
+    \PstDrawNode{0.54}{0.54}{0.54}{0.48}{0.48}{4.50}{1}
+    \PstDrawNode{0.90}{0.90}{0.90}{0.48}{0.48}{4.50}{9}
+    \PstDrawNode{0.90}{0.90}{0.90}{0.48}{0.48}{4.50}{11}
+    \PstDrawNode{0.90}{0.90}{0.90}{0.48}{0.48}{4.50}{13}
+    \PstDrawNode{0.90}{0.90}{0.90}{0.48}{0.48}{4.50}{15}
+    \PstDrawNode{1.00}{0.00}{0.00}{0.48}{0.48}{4.50}{17}
+    \PstDrawNode{0.82}{0.82}{0.82}{0.48}{0.48}{4.50}{19}
+    \PstDrawNode{0.87}{0.87}{0.87}{0.48}{0.48}{4.50}{21}
+   \psaxes[labels = no,axesstyle = axes,subticks=2,Ox=0,Oy=0,xylogBase=2,Dx=2,Dy=4]{->}(26,33)
+\psline{-}(-0.15,1)(0,1)
+   \rput[r](-0.2,1){4.00}
+\psline{-}(-0.15,3)(0,3)
+   \rput[r](-0.2,3){16.00}
+\psline{-}(-0.15,5)(0,5)
+   \rput[r](-0.2,5){64.00}
+\psline{-}(-0.15,7)(0,7)
+   \rput[r](-0.2,7){256.00}
+\psline{-}(-0.15,9)(0,9)
+   \rput[r](-0.2,9){1.00K}
+\psline{-}(-0.15,11)(0,11)
+   \rput[r](-0.2,11){4.00K}
+\psline{-}(-0.15,13)(0,13)
+   \rput[r](-0.2,13){16.00K}
+\psline{-}(-0.15,15)(0,15)
+   \rput[r](-0.2,15){64.00K}
+\psline{-}(-0.15,17)(0,17)
+   \rput[r](-0.2,17){256.00K}
+\psline{-}(-0.15,19)(0,19)
+   \rput[r](-0.2,19){1.00M}
+\psline{-}(-0.15,21)(0,21)
+   \rput[r](-0.2,21){4.00M}
+\psline{-}(-0.15,23)(0,23)
+   \rput[r](-0.2,23){16.00M}
+\psline{-}(-0.15,25)(0,25)
+   \rput[r](-0.2,25){64.00M}
+\psline{-}(-0.15,27)(0,27)
+   \rput[r](-0.2,27){256.00M}
+\psline{-}(-0.15,29)(0,29)
+   \rput[r](-0.2,29){1.00G}
+\psline{-}(-0.15,31)(0,31)
+   \rput[r](-0.2,31){$>$1.00G}
+\psline{-}(-0.50,-0.15)(-0.50,0)
+   \rput[r]{90}(0.50,-0.22,){1.00}
+\psline{-}(0.50,-0.15)(0.50,0)
+   \rput[r]{90}(1.50,-0.22,){2.00}
+\psline{-}(1.50,-0.15)(1.50,0)
+   \rput[r]{90}(2.50,-0.22,){4.00}
+\psline{-}(2.50,-0.15)(2.50,0)
+   \rput[r]{90}(3.50,-0.22,){8.00}
+\psline{-}(3.50,-0.15)(3.50,0)
+   \rput[r]{90}(4.50,-0.22,){16.00}
+\psline{-}(4.50,-0.15)(4.50,0)
+   \rput[r]{90}(5.50,-0.22,){32.00}
+\psline{-}(5.50,-0.15)(5.50,0)
+   \rput[r]{90}(6.50,-0.22,){64.00}
+\psline{-}(6.50,-0.15)(6.50,0)
+   \rput[r]{90}(7.50,-0.22,){128.00}
+\psline{-}(7.50,-0.15)(7.50,0)
+   \rput[r]{90}(8.50,-0.22,){256.00}
+\psline{-}(8.50,-0.15)(8.50,0)
+   \rput[r]{90}(9.50,-0.22,){512.00}
+\psline{-}(9.50,-0.15)(9.50,0)
+   \rput[r]{90}(10.50,-0.22,){1.00K}
+\psline{-}(10.50,-0.15)(10.50,0)
+   \rput[r]{90}(11.50,-0.22,){2.00K}
+\psline{-}(11.50,-0.15)(11.50,0)
+   \rput[r]{90}(12.50,-0.22,){4.00K}
+\psline{-}(12.50,-0.15)(12.50,0)
+   \rput[r]{90}(13.50,-0.22,){8.00K}
+\psline{-}(13.50,-0.15)(13.50,0)
+   \rput[r]{90}(14.50,-0.22,){16.00K}
+\psline{-}(14.50,-0.15)(14.50,0)
+   \rput[r]{90}(15.50,-0.22,){32.00K}
+\psline{-}(15.50,-0.15)(15.50,0)
+   \rput[r]{90}(16.50,-0.22,){64.00K}
+\psline{-}(16.50,-0.15)(16.50,0)
+   \rput[r]{90}(17.50,-0.22,){128.00K}
+\psline{-}(17.50,-0.15)(17.50,0)
+   \rput[r]{90}(18.50,-0.22,){256.00K}
+\psline{-}(18.50,-0.15)(18.50,0)
+   \rput[r]{90}(19.50,-0.22,){512.00K}
+\psline{-}(19.50,-0.15)(19.50,0)
+   \rput[r]{90}(20.50,-0.22,){1.00M}
+\psline{-}(20.50,-0.15)(20.50,0)
+   \rput[r]{90}(21.50,-0.22,){2.00M}
+\psline{-}(21.50,-0.15)(21.50,0)
+   \rput[r]{90}(22.50,-0.22,){4.00M}
+\psline{-}(22.50,-0.15)(22.50,0)
+   \rput[r]{90}(23.50,-0.22,){$>$4.00M}
+   \rput{90}(-5,15){rate [byte/sec]}
+   \rput{0}(13,-8){message length [byte]}
+  \PstDrawNode{0.90}{0.90}{0.90}{0.48}{0.48}{0}{-13}
+  \rput[r]{90}(0,-14.50){1 \#}
+  \PstDrawNode{0.80}{0.80}{0.80}{0.48}{0.48}{1}{-13}
+  \rput[r]{90}(1,-14.50){1246 \#}
+  \PstDrawNode{0.71}{0.71}{0.71}{0.48}{0.48}{2}{-13}
+  \rput[r]{90}(2,-14.50){2492 \#}
+  \PstDrawNode{0.61}{0.61}{0.61}{0.48}{0.48}{3}{-13}
+  \rput[r]{90}(3,-14.50){3738 \#}
+  \PstDrawNode{0.52}{0.52}{0.52}{0.48}{0.48}{4}{-13}
+  \rput[r]{90}(4,-14.50){4983 \#}
+  \PstDrawNode{0.42}{0.42}{0.42}{0.48}{0.48}{5}{-13}
+  \rput[r]{90}(5,-14.50){6229 \#}
+  \PstDrawNode{0.00}{0.15}{1.00}{0.48}{0.48}{6}{-13}
+  \rput[r]{90}(6,-14.50){7475 \#}
+  \PstDrawNode{0.00}{0.35}{1.00}{0.48}{0.48}{7}{-13}
+  \rput[r]{90}(7,-14.50){8721 \#}
+  \PstDrawNode{0.00}{0.54}{1.00}{0.48}{0.48}{8}{-13}
+  \rput[r]{90}(8,-14.50){9966 \#}
+  \PstDrawNode{0.00}{0.73}{1.00}{0.48}{0.48}{9}{-13}
+  \rput[r]{90}(9,-14.50){11212 \#}
+  \PstDrawNode{0.00}{0.92}{1.00}{0.48}{0.48}{10}{-13}
+  \rput[r]{90}(10,-14.50){12458 \#}
+  \PstDrawNode{0.00}{1.00}{0.88}{0.48}{0.48}{11}{-13}
+  \rput[r]{90}(11,-14.50){13704 \#}
+  \PstDrawNode{0.00}{1.00}{0.69}{0.48}{0.48}{12}{-13}
+  \rput[r]{90}(12,-14.50){14949 \#}
+  \PstDrawNode{0.00}{1.00}{0.50}{0.48}{0.48}{13}{-13}
+  \rput[r]{90}(13,-14.50){16195 \#}
+  \PstDrawNode{0.00}{1.00}{0.31}{0.48}{0.48}{14}{-13}
+  \rput[r]{90}(14,-14.50){17441 \#}
+  \PstDrawNode{0.00}{1.00}{0.12}{0.48}{0.48}{15}{-13}
+  \rput[r]{90}(15,-14.50){18686 \#}
+  \PstDrawNode{0.08}{1.00}{0.00}{0.48}{0.48}{16}{-13}
+  \rput[r]{90}(16,-14.50){19932 \#}
+  \PstDrawNode{0.27}{1.00}{0.00}{0.48}{0.48}{17}{-13}
+  \rput[r]{90}(17,-14.50){21178 \#}
+  \PstDrawNode{0.46}{1.00}{0.00}{0.48}{0.48}{18}{-13}
+  \rput[r]{90}(18,-14.50){22424 \#}
+  \PstDrawNode{0.65}{1.00}{0.00}{0.48}{0.48}{19}{-13}
+  \rput[r]{90}(19,-14.50){23669 \#}
+  \PstDrawNode{0.85}{1.00}{0.00}{0.48}{0.48}{20}{-13}
+  \rput[r]{90}(20,-14.50){24915 \#}
+  \PstDrawNode{1.00}{0.96}{0.00}{0.48}{0.48}{21}{-13}
+  \rput[r]{90}(21,-14.50){26161 \#}
+  \PstDrawNode{1.00}{0.77}{0.00}{0.48}{0.48}{22}{-13}
+  \rput[r]{90}(22,-14.50){27407 \#}
+  \PstDrawNode{1.00}{0.58}{0.00}{0.48}{0.48}{23}{-13}
+  \rput[r]{90}(23,-14.50){28652 \#}
+  \PstDrawNode{1.00}{0.38}{0.00}{0.48}{0.48}{24}{-13}
+  \rput[r]{90}(24,-14.50){29898 \#}
+  \PstDrawNode{1.00}{0.19}{0.00}{0.48}{0.48}{25}{-13}
+  \rput[r]{90}(25,-14.50){31144 \#}
+\end{pspicture}
+\end{help}
+
+\newpage
+
+\def\barData{
+0 12.182394
+2 15.228217
+4 15.228819}
+
+{\Large \bf P2P - message length histogram}
+\bigskip
+
+\begin{help}
+\psset{xunit=0.5,yunit=0.6}
+\begin{pspicture}(25,17)
+   \psgrid[subgriddiv=0,%
+      griddots=5,%
+      gridlabels=0,%
+      yunit=1](24,16)
+   \psaxes[labels = no,axesstyle = axes,Ox=0,Oy=0,xylogBase=2,Dx=2,Dy=2]{->}(25,17)
+   \listplot[shadow=false,linecolor=blue,plotstyle=bar,barwidth=0.2cm,
+       fillcolor=red,fillstyle=solid]{\barData}
+\psline{-}(-0.15,0)(0,0)
+   \rput[r](-0.4,0){1.00}
+\psline{-}(-0.15,2)(0,2)
+   \rput[r](-0.4,2){4.00}
+\psline{-}(-0.15,4)(0,4)
+   \rput[r](-0.4,4){16.00}
+\psline{-}(-0.15,6)(0,6)
+   \rput[r](-0.4,6){64.00}
+\psline{-}(-0.15,8)(0,8)
+   \rput[r](-0.4,8){256.00}
+\psline{-}(-0.15,10)(0,10)
+   \rput[r](-0.4,10){1.02K}
+\psline{-}(-0.15,12)(0,12)
+   \rput[r](-0.4,12){4.10K}
+\psline{-}(-0.15,14)(0,14)
+   \rput[r](-0.4,14){16.38K}
+\psline{-}(-0.15,16)(0,16)
+   \rput[r](-0.4,16){65.54K}
+\psline{-}(0,-0.15)(0,0)
+   \rput[r]{90}(0,-0.22,){1.00}
+\psline{-}(2,-0.15)(2,0)
+   \rput[r]{90}(2,-0.22,){4.00}
+\psline{-}(4,-0.15)(4,0)
+   \rput[r]{90}(4,-0.22,){16.00}
+\psline{-}(6,-0.15)(6,0)
+   \rput[r]{90}(6,-0.22,){64.00}
+\psline{-}(8,-0.15)(8,0)
+   \rput[r]{90}(8,-0.22,){256.00}
+\psline{-}(10,-0.15)(10,0)
+   \rput[r]{90}(10,-0.22,){1.00K}
+\psline{-}(12,-0.15)(12,0)
+   \rput[r]{90}(12,-0.22,){4.00K}
+\psline{-}(14,-0.15)(14,0)
+   \rput[r]{90}(14,-0.22,){16.00K}
+\psline{-}(16,-0.15)(16,0)
+   \rput[r]{90}(16,-0.22,){64.00K}
+\psline{-}(18,-0.15)(18,0)
+   \rput[r]{90}(18,-0.22,){256.00K}
+\psline{-}(20,-0.15)(20,0)
+   \rput[r]{90}(20,-0.22,){1.00M}
+\psline{-}(22,-0.15)(22,0)
+   \rput[r]{90}(22,-0.22,){4.00M}
+\psline{-}(24,-0.15)(24,0)
+   \rput[r]{90}(24,-0.22,){16.00M}
+   \rput{90}(-5,8){invocation[\#]}
+   \rput{0}(12,-4){message length[byte]}
+\end{pspicture}
+\end{help}
+
+\newpage
+\def\bardataII
+{
+0.30 6.23
+0.80 8.23
+1.80 8.23
+2.80 8.23
+3.80 8.23
+4.80 8.23
+5.80 8.23
+6.80 8.23
+7.80 8.23
+}
+{\Large \bf ONE2ALL Invocation (sum)}
+
+\bigskip
+\bigskip
+\bigskip
+
+\begin{help}
+\psset{xunit=1,yunit=0.5}
+\begin{pspicture}(0,0)(16,9.21)
+   \psaxes[labels=no,Oy=-1,ysubticks=2,ylogBase=2,Dy=2,ytickwidth=1pt,
+            ysubtickwidth=1pt,xticksize=-1 9.21,yticksize=0 16,ysubticksize=1,
+            yticklinestyle=dotted,ysubticklinestyle=dotted]{-}(0,0)(0,0)(16.1,9.21)
+   \rput[r](-0.2,0){0}
+\psline{-}(-0.15,1)(0,1)
+   \rput[r](-0.2,1){1}
+\psline{-}(-0.15,2)(0,2)
+   \rput[r](-0.2,2){2}
+\psline{-}(-0.15,3)(0,3)
+   \rput[r](-0.2,3){4}
+\psline{-}(-0.15,4)(0,4)
+   \rput[r](-0.2,4){8}
+\psline{-}(-0.15,5)(0,5)
+   \rput[r](-0.2,5){16}
+\psline{-}(-0.15,6)(0,6)
+   \rput[r](-0.2,6){32}
+\psline{-}(-0.15,7)(0,7)
+   \rput[r](-0.2,7){64}
+\psline{-}(-0.15,8)(0,8)
+   \rput[r](-0.2,8){128}
+\psline{-}(-0.15,9)(0,9)
+   \rput[r](-0.2,9){256}
+   \listplot[shadow=false,plotstyle=bar,barwidth=0.46,
+       fillcolor=green,fillstyle=solid]{\bardataII}
+\psframe[fillstyle=solid,fillcolor=lightgray](0.20,0)(0.40,7.81)
+\psframe[fillstyle=solid,fillcolor=lightgray](0.70,8.23)(0.90,8.23)
+\psframe[fillstyle=solid,fillcolor=lightgray](1.70,8.23)(1.90,8.23)
+\psframe[fillstyle=solid,fillcolor=lightgray](2.70,8.23)(2.90,8.23)
+\psframe[fillstyle=solid,fillcolor=lightgray](3.70,8.23)(3.90,8.23)
+\psframe[fillstyle=solid,fillcolor=lightgray](4.70,8.23)(4.90,8.23)
+\psframe[fillstyle=solid,fillcolor=lightgray](5.70,8.23)(5.90,8.23)
+\psframe[fillstyle=solid,fillcolor=lightgray](6.70,8.23)(6.90,8.23)
+\psframe[fillstyle=solid,fillcolor=lightgray](7.70,8.23)(7.90,8.23)
+  \rput[t](0.20,-0.2){s}
+  \rput[t](0.80,-0.2){r}
+  \rput[t](1.20,-0.2){s}
+  \rput[t](1.80,-0.2){r}
+  \rput[r]{90}(0.20,-0.8){Process 0}
+  \rput[r]{90}(0.50,-0.8){-}
+  \rput[r]{90}(0.80,-0.8){Process 3}
+  \rput[t](2.20,-0.2){s}
+  \rput[t](2.80,-0.2){r}
+  \rput[t](3.20,-0.2){s}
+  \rput[t](3.80,-0.2){r}
+  \rput[r]{90}(2.20,-0.8){Process 8}
+  \rput[r]{90}(2.50,-0.8){-}
+  \rput[r]{90}(2.80,-0.8){Process 11}
+  \rput[t](4.20,-0.2){s}
+  \rput[t](4.80,-0.2){r}
+  \rput[t](5.20,-0.2){s}
+  \rput[t](5.80,-0.2){r}
+  \rput[r]{90}(4.20,-0.8){Process 16}
+  \rput[r]{90}(4.50,-0.8){-}
+  \rput[r]{90}(4.80,-0.8){Process 19}
+  \rput[t](6.20,-0.2){s}
+  \rput[t](6.80,-0.2){r}
+  \rput[t](7.20,-0.2){s}
+  \rput[t](7.80,-0.2){r}
+  \rput[r]{90}(6.20,-0.8){Process 24}
+  \rput[r]{90}(6.50,-0.8){-}
+  \rput[r]{90}(6.80,-0.8){Process 27}
+  \rput[t](8.20,-0.2){s}
+  \rput[t](8.80,-0.2){r}
+  \rput[t](9.20,-0.2){s}
+  \rput[t](9.80,-0.2){r}
+  \rput[r]{90}(8.20,-0.8){Thread 1:1}
+  \rput[r]{90}(8.50,-0.8){-}
+  \rput[r]{90}(8.80,-0.8){Thread 4:1}
+  \rput[t](10.20,-0.2){s}
+  \rput[t](10.80,-0.2){r}
+  \rput[t](11.20,-0.2){s}
+  \rput[t](11.80,-0.2){r}
+  \rput[r]{90}(10.20,-0.8){Thread 9:1}
+  \rput[r]{90}(10.50,-0.8){-}
+  \rput[r]{90}(10.80,-0.8){Thread 12:1}
+  \rput[t](12.20,-0.2){s}
+  \rput[t](12.80,-0.2){r}
+  \rput[t](13.20,-0.2){s}
+  \rput[t](13.80,-0.2){r}
+  \rput[r]{90}(12.20,-0.8){Thread 17:1}
+  \rput[r]{90}(12.50,-0.8){-}
+  \rput[r]{90}(12.80,-0.8){Thread 20:1}
+  \rput[t](14.20,-0.2){s}
+  \rput[t](14.80,-0.2){r}
+  \rput[t](15.20,-0.2){s}
+  \rput[t](15.80,-0.2){r}
+  \rput[r]{90}(14.20,-0.8){Thread 25:1}
+  \rput[r]{90}(14.50,-0.8){-}
+  \rput[r]{90}(14.80,-0.8){Thread 28:1}
+  \rput[l](0,-7){s - Send}
+  \rput[l](0,-7.7){r - Receive}
+  \rput[l](0,-11.0){In this chart one collective operation call means that the root process broadcasts only one message to the}
+  \rput[l](0,-11.7){group and not allways one message to every group member. All processes of the group, the root process}
+  \rput[l](0,-12.4){included, receive one message in total.}
+\end{pspicture}
+\end{help}
+\newpage
+\def\bardataII
+{
+0.30 24.81
+0.80 34.86
+1.80 35.28
+2.80 35.28
+3.80 35.28
+4.80 35.28
+5.80 35.28
+6.80 35.28
+7.80 35.28
+}
+{\Large \bf ONE2ALL Message Length (sum)[in Byte]}
+
+\bigskip
+\bigskip
+\bigskip
+
+\begin{help}
+\psset{xunit=1,yunit=0.5}
+\begin{pspicture}(0,0)(16,36.62)
+   \psaxes[labels=no,Oy=-1,ysubticks=2,ylogBase=2,Dy=2,ytickwidth=1pt,
+            ysubtickwidth=1pt,xticksize=-1 36.62,yticksize=0 16,ysubticksize=1,
+            yticklinestyle=dotted,ysubticklinestyle=dotted]{-}(0,0)(0,0)(16.1,36.62)
+   \rput[r](-0.2,0){0}
+\psline{-}(-0.15,1)(0,1)
+   \rput[r](-0.2,1){1}
+\psline{-}(-0.15,2)(0,2)
+   \rput[r](-0.2,2){2}
+\psline{-}(-0.15,3)(0,3)
+   \rput[r](-0.2,3){4}
+\psline{-}(-0.15,4)(0,4)
+   \rput[r](-0.2,4){8}
+\psline{-}(-0.15,5)(0,5)
+   \rput[r](-0.2,5){16}
+\psline{-}(-0.15,6)(0,6)
+   \rput[r](-0.2,6){32}
+\psline{-}(-0.15,7)(0,7)
+   \rput[r](-0.2,7){64}
+\psline{-}(-0.15,8)(0,8)
+   \rput[r](-0.2,8){128}
+\psline{-}(-0.15,9)(0,9)
+   \rput[r](-0.2,9){256}
+\psline{-}(-0.15,10)(0,10)
+   \rput[r](-0.2,10){512}
+\psline{-}(-0.15,11)(0,11)
+   \rput[r](-0.2,11){1.00K}
+\psline{-}(-0.15,12)(0,12)
+   \rput[r](-0.2,12){2.00K}
+\psline{-}(-0.15,13)(0,13)
+   \rput[r](-0.2,13){4.00K}
+\psline{-}(-0.15,14)(0,14)
+   \rput[r](-0.2,14){8.00K}
+\psline{-}(-0.15,15)(0,15)
+   \rput[r](-0.2,15){16.00K}
+\psline{-}(-0.15,16)(0,16)
+   \rput[r](-0.2,16){32.00K}
+\psline{-}(-0.15,17)(0,17)
+   \rput[r](-0.2,17){64.00K}
+\psline{-}(-0.15,18)(0,18)
+   \rput[r](-0.2,18){128.00K}
+\psline{-}(-0.15,19)(0,19)
+   \rput[r](-0.2,19){256.00K}
+\psline{-}(-0.15,20)(0,20)
+   \rput[r](-0.2,20){512.00K}
+\psline{-}(-0.15,21)(0,21)
+   \rput[r](-0.2,21){1.00M}
+\psline{-}(-0.15,22)(0,22)
+   \rput[r](-0.2,22){2.00M}
+\psline{-}(-0.15,23)(0,23)
+   \rput[r](-0.2,23){4.00M}
+\psline{-}(-0.15,24)(0,24)
+   \rput[r](-0.2,24){8.00M}
+\psline{-}(-0.15,25)(0,25)
+   \rput[r](-0.2,25){16.00M}
+\psline{-}(-0.15,26)(0,26)
+   \rput[r](-0.2,26){32.00M}
+\psline{-}(-0.15,27)(0,27)
+   \rput[r](-0.2,27){64.00M}
+\psline{-}(-0.15,28)(0,28)
+   \rput[r](-0.2,28){128.00M}
+\psline{-}(-0.15,29)(0,29)
+   \rput[r](-0.2,29){256.00M}
+\psline{-}(-0.15,30)(0,30)
+   \rput[r](-0.2,30){512.00M}
+\psline{-}(-0.15,31)(0,31)
+   \rput[r](-0.2,31){1.00G}
+\psline{-}(-0.15,32)(0,32)
+   \rput[r](-0.2,32){2.00G}
+\psline{-}(-0.15,33)(0,33)
+   \rput[r](-0.2,33){4.00G}
+\psline{-}(-0.15,34)(0,34)
+   \rput[r](-0.2,34){8.00G}
+\psline{-}(-0.15,35)(0,35)
+   \rput[r](-0.2,35){16.00G}
+\psline{-}(-0.15,36)(0,36)
+   \rput[r](-0.2,36){32.00G}
+   \listplot[shadow=false,plotstyle=bar,barwidth=0.46,
+       fillcolor=green,fillstyle=solid]{\bardataII}
+\psframe[fillstyle=solid,fillcolor=lightgray](0.20,0)(0.40,26.40)
+\psframe[fillstyle=solid,fillcolor=lightgray](0.70,33.28)(0.90,35.60)
+\psframe[fillstyle=solid,fillcolor=lightgray](1.70,35.28)(1.90,35.28)
+\psframe[fillstyle=solid,fillcolor=lightgray](2.70,35.28)(2.90,35.28)
+\psframe[fillstyle=solid,fillcolor=lightgray](3.70,35.28)(3.90,35.28)
+\psframe[fillstyle=solid,fillcolor=lightgray](4.70,35.28)(4.90,35.28)
+\psframe[fillstyle=solid,fillcolor=lightgray](5.70,35.28)(5.90,35.28)
+\psframe[fillstyle=solid,fillcolor=lightgray](6.70,35.28)(6.90,35.28)
+\psframe[fillstyle=solid,fillcolor=lightgray](7.70,35.28)(7.90,35.28)
+  \rput[t](0.20,-0.2){s}
+  \rput[t](0.80,-0.2){r}
+  \rput[t](1.20,-0.2){s}
+  \rput[t](1.80,-0.2){r}
+  \rput[r]{90}(0.20,-0.8){Process 0}
+  \rput[r]{90}(0.50,-0.8){-}
+  \rput[r]{90}(0.80,-0.8){Process 3}
+  \rput[t](2.20,-0.2){s}
+  \rput[t](2.80,-0.2){r}
+  \rput[t](3.20,-0.2){s}
+  \rput[t](3.80,-0.2){r}
+  \rput[r]{90}(2.20,-0.8){Process 8}
+  \rput[r]{90}(2.50,-0.8){-}
+  \rput[r]{90}(2.80,-0.8){Process 11}
+  \rput[t](4.20,-0.2){s}
+  \rput[t](4.80,-0.2){r}
+  \rput[t](5.20,-0.2){s}
+  \rput[t](5.80,-0.2){r}
+  \rput[r]{90}(4.20,-0.8){Process 16}
+  \rput[r]{90}(4.50,-0.8){-}
+  \rput[r]{90}(4.80,-0.8){Process 19}
+  \rput[t](6.20,-0.2){s}
+  \rput[t](6.80,-0.2){r}
+  \rput[t](7.20,-0.2){s}
+  \rput[t](7.80,-0.2){r}
+  \rput[r]{90}(6.20,-0.8){Process 24}
+  \rput[r]{90}(6.50,-0.8){-}
+  \rput[r]{90}(6.80,-0.8){Process 27}
+  \rput[t](8.20,-0.2){s}
+  \rput[t](8.80,-0.2){r}
+  \rput[t](9.20,-0.2){s}
+  \rput[t](9.80,-0.2){r}
+  \rput[r]{90}(8.20,-0.8){Thread 1:1}
+  \rput[r]{90}(8.50,-0.8){-}
+  \rput[r]{90}(8.80,-0.8){Thread 4:1}
+  \rput[t](10.20,-0.2){s}
+  \rput[t](10.80,-0.2){r}
+  \rput[t](11.20,-0.2){s}
+  \rput[t](11.80,-0.2){r}
+  \rput[r]{90}(10.20,-0.8){Thread 9:1}
+  \rput[r]{90}(10.50,-0.8){-}
+  \rput[r]{90}(10.80,-0.8){Thread 12:1}
+  \rput[t](12.20,-0.2){s}
+  \rput[t](12.80,-0.2){r}
+  \rput[t](13.20,-0.2){s}
+  \rput[t](13.80,-0.2){r}
+  \rput[r]{90}(12.20,-0.8){Thread 17:1}
+  \rput[r]{90}(12.50,-0.8){-}
+  \rput[r]{90}(12.80,-0.8){Thread 20:1}
+  \rput[t](14.20,-0.2){s}
+  \rput[t](14.80,-0.2){r}
+  \rput[t](15.20,-0.2){s}
+  \rput[t](15.80,-0.2){r}
+  \rput[r]{90}(14.20,-0.8){Thread 25:1}
+  \rput[r]{90}(14.50,-0.8){-}
+  \rput[r]{90}(14.80,-0.8){Thread 28:1}
+  \rput[l](0,-7){s - Send}
+  \rput[l](0,-7.7){r - Receive}
+  \rput[l](0,-11.0){In this chart one collective operation call means that the root process broadcasts only one message to the}
+  \rput[l](0,-11.7){group and not allways one message to every group member. All processes of the group, the root process}
+  \rput[l](0,-12.4){included, receive one message in total.}
+\end{pspicture}
+\end{help}
+\newpage
+
+\end{center}
+
+\end{document}

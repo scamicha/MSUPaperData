@@ -1,0 +1,154 @@
+
+definitions:
+
+(#1) 	DefVersion: stream 0, version: 1.6.4 "stingray"
+(#2) 	DefCreator: stream 0, creator "VampirTrace 5.8"
+(#3) 	DefComment: stream 0, comment "Trace Times:"
+(#4) 	DefComment: stream 0, comment " Start: Fri Apr 30 08:24:58 2010  (1272633898013816)"
+(#5) 	DefComment: stream 0, comment " Stop: Fri Apr 30 08:27:49 2010  (1272634069004321)"
+(#6) 	DefComment: stream 0, comment " Elapsed: 00:02:50 (170990505)"
+(#7) 	DefComment: stream 0, comment "VampirTrace Environment:"
+(#8) 	DefComment: stream 0, comment " VT_MODE: TRACE"
+(#9) 	DefComment: stream 0, comment " VT_BUFFER_SIZE: 1G"
+(#10) 	DefComment: stream 0, comment " VT_SYNC_FLUSH: no"
+(#11) 	DefComment: stream 0, comment " VT_SYNC_FLUSH_LEVEL: 80"
+(#12) 	DefComment: stream 0, comment " VT_MAX_FLUSHES: 1"
+(#13) 	DefComment: stream 0, comment " VT_RUSAGE: <not set>"
+(#14) 	DefComment: stream 0, comment " VT_RUSAGE_INTV: 100"
+(#15) 	DefComment: stream 0, comment " VT_MEMTRACE: no"
+(#16) 	DefComment: stream 0, comment " VT_MEMTRACE_MARKER: no"
+(#17) 	DefComment: stream 0, comment " VT_IOTRACE: yes"
+(#18) 	DefComment: stream 0, comment " VT_FILTER_SPEC: ./vtfilter.txt"
+(#19) 	DefComment: stream 0, comment " VT_GROUPS_SPEC: <not set>"
+(#20) 	DefTimerResolution: stream 0, TicksPerSecond 2613390213
+(#21) 	DefProcess: stream 0, process 1, name "Process 0", parent 0
+(#22) 	DefProcessGroup: stream 0, group 1500000000, name "Raptor-16-01.HPC.MsS", procs 1, 
+(#23) 	DefSclFile: stream 0, file 1, name "LIBC"
+(#24) 	DefSclFile: stream 0, file 2, name "I/O"
+(#25) 	DefSclFile: stream 0, file 3, name "/data/lustre/scamicha/0.3JUP25AUL512T0/TESTREAD/testread.f90"
+(#26) 	DefScl: stream 0, source 1, file 3, line 2
+(#27) 	DefFileGroup: stdio, token 1, stream 0
+(#28) 	DefFileGroup: fileio, token 2, stream 0
+(#29) 	DefFile: <STDIN>, stream 0, token 1, group 1
+(#30) 	DefFile: <STDOUT>, stream 0, token 2, group 1
+(#31) 	DefFile: <STDERR>, stream 0, token 3, group 1
+(#32) 	DefFile: <INVALID FILE (fd==-1)>, stream 0, token 4, group 2
+(#33) 	DefFile: /data/lustre/scamicha/0.3JUP25AUL512T0/TESTREAD/../SINGLE_DATA/rho3d.00370200, stream 0, token 5, group 2
+(#34) 	DefFile: /data/lustre/scamicha/0.3JUP25AUL512T0/TESTREAD/../SINGLE_DATA/rho3d.00370400, stream 0, token 6, group 2
+(#35) 	DefFile: /data/lustre/scamicha/0.3JUP25AUL512T0/TESTREAD/../SINGLE_DATA/rho3d.00370600, stream 0, token 7, group 2
+(#36) 	DefFile: /data/lustre/scamicha/0.3JUP25AUL512T0/TESTREAD/../SINGLE_DATA/rho3d.00370800, stream 0, token 8, group 2
+(#37) 	DefFile: /data/lustre/scamicha/0.3JUP25AUL512T0/TESTREAD/../SINGLE_DATA/rho3d.00371000, stream 0, token 9, group 2
+(#38) 	DefFile: /data/lustre/scamicha/0.3JUP25AUL512T0/TESTREAD/../SINGLE_DATA/rho3d.00371200, stream 0, token 10, group 2
+(#39) 	DefFile: /data/lustre/scamicha/0.3JUP25AUL512T0/TESTREAD/../SINGLE_DATA/rho3d.00371400, stream 0, token 11, group 2
+(#40) 	DefFile: /data/lustre/scamicha/0.3JUP25AUL512T0/TESTREAD/../SINGLE_DATA/rho3d.00371600, stream 0, token 12, group 2
+(#41) 	DefFile: /data/lustre/scamicha/0.3JUP25AUL512T0/TESTREAD/../SINGLE_DATA/rho3d.00371800, stream 0, token 13, group 2
+(#42) 	DefFile: /data/lustre/scamicha/0.3JUP25AUL512T0/TESTREAD/../SINGLE_DATA/rho3d.00372000, stream 0, token 14, group 2
+(#43) 	DefFile: /data/lustre/scamicha/0.3JUP25AUL512T0/TESTREAD/../SINGLE_DATA/rho3d.00372200, stream 0, token 15, group 2
+(#44) 	DefFile: /data/lustre/scamicha/0.3JUP25AUL512T0/TESTREAD/../SINGLE_DATA/rho3d.00372400, stream 0, token 16, group 2
+(#45) 	DefFile: /data/lustre/scamicha/0.3JUP25AUL512T0/TESTREAD/../SINGLE_DATA/rho3d.00372600, stream 0, token 17, group 2
+(#46) 	DefFile: /data/lustre/scamicha/0.3JUP25AUL512T0/TESTREAD/../SINGLE_DATA/rho3d.00372800, stream 0, token 18, group 2
+(#47) 	DefFile: /data/lustre/scamicha/0.3JUP25AUL512T0/TESTREAD/../SINGLE_DATA/rho3d.00373000, stream 0, token 19, group 2
+(#48) 	DefFile: /data/lustre/scamicha/0.3JUP25AUL512T0/TESTREAD/../SINGLE_DATA/rho3d.00373200, stream 0, token 20, group 2
+(#49) 	DefFile: /data/lustre/scamicha/0.3JUP25AUL512T0/TESTREAD/../SINGLE_DATA/rho3d.00373400, stream 0, token 21, group 2
+(#50) 	DefFile: /data/lustre/scamicha/0.3JUP25AUL512T0/TESTREAD/../SINGLE_DATA/rho3d.00373600, stream 0, token 22, group 2
+(#51) 	DefFile: /data/lustre/scamicha/0.3JUP25AUL512T0/TESTREAD/../SINGLE_DATA/rho3d.00373800, stream 0, token 23, group 2
+(#52) 	DefFile: /data/lustre/scamicha/0.3JUP25AUL512T0/TESTREAD/../SINGLE_DATA/rho3d.00374000, stream 0, token 24, group 2
+(#53) 	DefFile: /data/lustre/scamicha/0.3JUP25AUL512T0/TESTREAD/../SINGLE_DATA/rho3d.00374200, stream 0, token 25, group 2
+(#54) 	DefFile: /data/lustre/scamicha/0.3JUP25AUL512T0/TESTREAD/../SINGLE_DATA/rho3d.00374400, stream 0, token 26, group 2
+(#55) 	DefFile: /data/lustre/scamicha/0.3JUP25AUL512T0/TESTREAD/../SINGLE_DATA/rho3d.00374600, stream 0, token 27, group 2
+(#56) 	DefFile: /data/lustre/scamicha/0.3JUP25AUL512T0/TESTREAD/../SINGLE_DATA/rho3d.00374800, stream 0, token 28, group 2
+(#57) 	DefFile: /data/lustre/scamicha/0.3JUP25AUL512T0/TESTREAD/../SINGLE_DATA/rho3d.00375000, stream 0, token 29, group 2
+(#58) 	DefFile: /data/lustre/scamicha/0.3JUP25AUL512T0/TESTREAD/../SINGLE_DATA/rho3d.00375200, stream 0, token 30, group 2
+(#59) 	DefFile: /data/lustre/scamicha/0.3JUP25AUL512T0/TESTREAD/../SINGLE_DATA/rho3d.00375400, stream 0, token 31, group 2
+(#60) 	DefFile: /data/lustre/scamicha/0.3JUP25AUL512T0/TESTREAD/../SINGLE_DATA/rho3d.00375600, stream 0, token 32, group 2
+(#61) 	DefFile: /data/lustre/scamicha/0.3JUP25AUL512T0/TESTREAD/../SINGLE_DATA/rho3d.00375800, stream 0, token 33, group 2
+(#62) 	DefFile: /data/lustre/scamicha/0.3JUP25AUL512T0/TESTREAD/../SINGLE_DATA/rho3d.00376000, stream 0, token 34, group 2
+(#63) 	DefFile: /data/lustre/scamicha/0.3JUP25AUL512T0/TESTREAD/../SINGLE_DATA/rho3d.00376200, stream 0, token 35, group 2
+(#64) 	DefFile: /data/lustre/scamicha/0.3JUP25AUL512T0/TESTREAD/../SINGLE_DATA/rho3d.00376400, stream 0, token 36, group 2
+(#65) 	DefFile: /data/lustre/scamicha/0.3JUP25AUL512T0/TESTREAD/../SINGLE_DATA/rho3d.00376600, stream 0, token 37, group 2
+(#66) 	DefFile: /data/lustre/scamicha/0.3JUP25AUL512T0/TESTREAD/../SINGLE_DATA/rho3d.00376800, stream 0, token 38, group 2
+(#67) 	DefFile: /data/lustre/scamicha/0.3JUP25AUL512T0/TESTREAD/../SINGLE_DATA/rho3d.00377000, stream 0, token 39, group 2
+(#68) 	DefFile: /data/lustre/scamicha/0.3JUP25AUL512T0/TESTREAD/../SINGLE_DATA/rho3d.00377200, stream 0, token 40, group 2
+(#69) 	DefFile: /data/lustre/scamicha/0.3JUP25AUL512T0/TESTREAD/../SINGLE_DATA/rho3d.00377400, stream 0, token 41, group 2
+(#70) 	DefFile: /data/lustre/scamicha/0.3JUP25AUL512T0/TESTREAD/../SINGLE_DATA/rho3d.00377600, stream 0, token 42, group 2
+(#71) 	DefFile: /data/lustre/scamicha/0.3JUP25AUL512T0/TESTREAD/../SINGLE_DATA/rho3d.00377800, stream 0, token 43, group 2
+(#72) 	DefFile: /data/lustre/scamicha/0.3JUP25AUL512T0/TESTREAD/../SINGLE_DATA/rho3d.00378000, stream 0, token 44, group 2
+(#73) 	DefFile: /data/lustre/scamicha/0.3JUP25AUL512T0/TESTREAD/../SINGLE_DATA/rho3d.00378200, stream 0, token 45, group 2
+(#74) 	DefFile: /data/lustre/scamicha/0.3JUP25AUL512T0/TESTREAD/../SINGLE_DATA/rho3d.00378400, stream 0, token 46, group 2
+(#75) 	DefFile: /data/lustre/scamicha/0.3JUP25AUL512T0/TESTREAD/../SINGLE_DATA/rho3d.00378600, stream 0, token 47, group 2
+(#76) 	DefFile: /data/lustre/scamicha/0.3JUP25AUL512T0/TESTREAD/../SINGLE_DATA/rho3d.00378800, stream 0, token 48, group 2
+(#77) 	DefFile: /data/lustre/scamicha/0.3JUP25AUL512T0/TESTREAD/../SINGLE_DATA/rho3d.00379000, stream 0, token 49, group 2
+(#78) 	DefFile: /data/lustre/scamicha/0.3JUP25AUL512T0/TESTREAD/../SINGLE_DATA/rho3d.00379200, stream 0, token 50, group 2
+(#79) 	DefFile: /data/lustre/scamicha/0.3JUP25AUL512T0/TESTREAD/../SINGLE_DATA/rho3d.00379400, stream 0, token 51, group 2
+(#80) 	DefFile: /data/lustre/scamicha/0.3JUP25AUL512T0/TESTREAD/../SINGLE_DATA/rho3d.00379600, stream 0, token 52, group 2
+(#81) 	DefFile: /data/lustre/scamicha/0.3JUP25AUL512T0/TESTREAD/../SINGLE_DATA/rho3d.00379800, stream 0, token 53, group 2
+(#82) 	DefFile: /data/lustre/scamicha/0.3JUP25AUL512T0/TESTREAD/../SINGLE_DATA/rho3d.00380000, stream 0, token 54, group 2
+(#83) 	DefFunctionGroup: stream 0, group 1, name "Application"
+(#84) 	DefFunctionGroup: stream 0, group 2, name "VT_API"
+(#85) 	DefFunctionGroup: stream 0, group 3, name "LIBC"
+(#86) 	DefFunctionGroup: stream 0, group 4, name "LIBC-I/O"
+(#87) 	DefFunction: stream 0, function 1, name "user", group 1, source 0
+(#88) 	DefFunction: stream 0, function 2, name "sync", group 2, source 0
+(#89) 	DefFunction: stream 0, function 3, name "sync time", group 2, source 0
+(#90) 	DefFunction: stream 0, function 4, name "flush", group 2, source 0
+(#91) 	DefFunction: stream 0, function 5, name "dump statistics", group 2, source 0
+(#92) 	DefFunction: stream 0, function 6, name "tracing off", group 2, source 0
+(#93) 	DefFunction: stream 0, function 7, name "execl", group 3, source 0
+(#94) 	DefFunction: stream 0, function 8, name "execle", group 3, source 0
+(#95) 	DefFunction: stream 0, function 9, name "execlp", group 3, source 0
+(#96) 	DefFunction: stream 0, function 10, name "execv", group 3, source 0
+(#97) 	DefFunction: stream 0, function 11, name "execve", group 3, source 0
+(#98) 	DefFunction: stream 0, function 12, name "execvp", group 3, source 0
+(#99) 	DefFunction: stream 0, function 13, name "fork", group 3, source 0
+(#100) 	DefFunction: stream 0, function 14, name "system", group 3, source 0
+(#101) 	DefFunction: stream 0, function 15, name "wait", group 3, source 0
+(#102) 	DefFunction: stream 0, function 16, name "waitpid", group 3, source 0
+(#103) 	DefFunction: stream 0, function 17, name "open", group 4, source 0
+(#104) 	DefFunction: stream 0, function 18, name "creat", group 4, source 0
+(#105) 	DefFunction: stream 0, function 19, name "close", group 4, source 0
+(#106) 	DefFunction: stream 0, function 20, name "dup", group 4, source 0
+(#107) 	DefFunction: stream 0, function 21, name "dup2", group 4, source 0
+(#108) 	DefFunction: stream 0, function 22, name "lseek", group 4, source 0
+(#109) 	DefFunction: stream 0, function 23, name "read", group 4, source 0
+(#110) 	DefFunction: stream 0, function 24, name "write", group 4, source 0
+(#111) 	DefFunction: stream 0, function 25, name "readv", group 4, source 0
+(#112) 	DefFunction: stream 0, function 26, name "writev", group 4, source 0
+(#113) 	DefFunction: stream 0, function 27, name "pread", group 4, source 0
+(#114) 	DefFunction: stream 0, function 28, name "pwrite", group 4, source 0
+(#115) 	DefFunction: stream 0, function 29, name "fdopen", group 4, source 0
+(#116) 	DefFunction: stream 0, function 30, name "fopen", group 4, source 0
+(#117) 	DefFunction: stream 0, function 31, name "fclose", group 4, source 0
+(#118) 	DefFunction: stream 0, function 32, name "fseek", group 4, source 0
+(#119) 	DefFunction: stream 0, function 33, name "fseeko", group 4, source 0
+(#120) 	DefFunction: stream 0, function 34, name "rewind", group 4, source 0
+(#121) 	DefFunction: stream 0, function 35, name "fsetpos", group 4, source 0
+(#122) 	DefFunction: stream 0, function 36, name "fread", group 4, source 0
+(#123) 	DefFunction: stream 0, function 37, name "fwrite", group 4, source 0
+(#124) 	DefFunction: stream 0, function 38, name "fgetc", group 4, source 0
+(#125) 	DefFunction: stream 0, function 39, name "getc", group 4, source 0
+(#126) 	DefFunction: stream 0, function 40, name "fgets", group 4, source 0
+(#127) 	DefFunction: stream 0, function 41, name "gets", group 4, source 0
+(#128) 	DefFunction: stream 0, function 42, name "fputc", group 4, source 0
+(#129) 	DefFunction: stream 0, function 43, name "putc", group 4, source 0
+(#130) 	DefFunction: stream 0, function 44, name "fputs", group 4, source 0
+(#131) 	DefFunction: stream 0, function 45, name "puts", group 4, source 0
+(#132) 	DefFunction: stream 0, function 46, name "fscanf", group 4, source 0
+(#133) 	DefFunction: stream 0, function 47, name "fprintf", group 4, source 0
+(#134) 	DefFunction: stream 0, function 48, name "unlink", group 4, source 0
+(#135) 	DefFunction: stream 0, function 49, name "flockfile", group 4, source 0
+(#136) 	DefFunction: stream 0, function 50, name "ftrylockfile", group 4, source 0
+(#137) 	DefFunction: stream 0, function 51, name "funlockfile", group 4, source 0
+(#138) 	DefFunction: stream 0, function 52, name "lockf", group 4, source 0
+(#139) 	DefFunction: stream 0, function 53, name "fcntl", group 4, source 0
+(#140) 	DefFunction: stream 0, function 54, name "open64", group 4, source 0
+(#141) 	DefFunction: stream 0, function 55, name "creat64", group 4, source 0
+(#142) 	DefFunction: stream 0, function 56, name "lseek64", group 4, source 0
+(#143) 	DefFunction: stream 0, function 57, name "pread64", group 4, source 0
+(#144) 	DefFunction: stream 0, function 58, name "pwrite64", group 4, source 0
+(#145) 	DefFunction: stream 0, function 59, name "fopen64", group 4, source 0
+(#146) 	DefFunction: stream 0, function 60, name "fseeko64", group 4, source 0
+(#147) 	DefFunction: stream 0, function 61, name "fsetpos64", group 4, source 0
+(#148) 	DefFunction: stream 0, function 62, name "MAIN__", group 1, source 1
+(#149) 	DefCounterGroup: stream 0, group 1, name "Miscellaneous"
+
+done
